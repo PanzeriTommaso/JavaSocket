@@ -13,7 +13,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author pogliani.mattia
+ * @author panzeri.tommasoambro
  */
 public class ClientSocket {
 
@@ -21,8 +21,9 @@ public class ClientSocket {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        Socket clientSocket;
         try {
-            Socket clientSocket = new Socket("10.1.33.200", 5000);
+             clientSocket = new Socket("10.1.33.23", 5000);
             PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
             BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
             out.println("hello server");
@@ -35,5 +36,4 @@ public class ClientSocket {
             Logger.getLogger(ClientSocket.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
 }
